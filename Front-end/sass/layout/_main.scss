@@ -1,0 +1,23 @@
+//* Import utils + components *//
+
+@import "../utils/_variables.scss";
+@import "../components/_cards.scss";
+@import "../components/_cards_product.scss";
+@import "../components/_cart_table.scss";
+@import "../components/_cart_buttons.scss";
+@import "../components/_empty_cart.scss";
+@import "../components/_modal.scss";
+@import "../components/_order_form.scss";
+@import "../components/_order_confirm.scss";
+
+//* Style sur le container principal *//
+
+main {
+    margin-bottom: 20px;
+    min-width: 320px;
+    & h1 {
+        text-align: center;
+        color: $primary_clr;
+        margin: 0 5% 20px 5%;
+    }
+}

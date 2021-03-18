@@ -1,0 +1,36 @@
+//* Import utils *//
+
+@import "../utils/_variables";
+
+//* Style sur le footer *//
+
+footer {
+    background-color: $primary_clr;
+    padding: 15px 0;
+    min-width: 320px;
+    & p {
+        text-align: center;
+        color: $secondary_clr;
+        margin: 0;
+    }
+}
+
+#footer_links {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+    & a {
+        color: $secondary_clr;
+    }
+    & a:hover {
+        color: $fourth_clr;
+    }
+    @media all and (max-width:560px) {
+        flex-direction: column;
+        text-align: center;
+        margin-bottom: 15px;
+        & a {
+            margin-bottom: 5px;
+        }     
+    }
+}

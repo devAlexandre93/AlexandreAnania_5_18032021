@@ -1,0 +1,28 @@
+//* Style sur les boutons *//
+
+@mixin button {
+    background: $primary_clr; 
+    color: $secondary_clr;
+    border: 2px solid $primary_clr; 
+    border-radius: 15px;
+    padding: 10px 20px;
+    box-shadow: 0px 3px 8px 3px rgb(200, 200, 200);
+    cursor: pointer;
+    &:focus {
+            outline: none;
+            background: $secondary_clr;
+            color: $primary_clr;
+            transition: 0.6s;
+    }
+}
+
+@mixin buttonhover {
+    background: $secondary_clr;
+    color: $primary_clr;
+    transition: 0.6s;
+}
+//* Box-shadow *//
+
+@mixin boxshadow {
+    box-shadow: 0 0 20px black; transition: 0.6s;
+}

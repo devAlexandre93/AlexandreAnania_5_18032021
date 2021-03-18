@@ -1,0 +1,116 @@
+//* Import utils *//
+
+@import "../utils/_mixins";
+@import "../utils/_variables";
+@import "../utils/_animations";
+
+//* Style sur l'encart de confirmation de commande *//
+
+.order_summary_container {
+    width: 650px;
+    overflow: hidden;
+    margin: 40px auto 40px auto;
+    border: white 4px solid;
+    border-radius: 15px;
+    box-shadow: 0px 3px 8px 2px rgb(200, 200, 200);
+    color: $primary_clr;
+    background-color: $secondary_clr;
+    text-align: center;
+    animation: 0.6s fadeIn ease-out backwards;
+    & h2 {
+        margin: 0 0 20px 0;
+        font-size: 1.2em;
+        @media all and (max-width: 519px) {
+            padding: 0 20px;
+            font-size: 1.1em;
+        }
+        @media all and (max-width: 419px) {
+            font-size: 1em;
+        }
+    }
+    
+    & p {
+        margin : 0;
+    }
+    @media all and (max-width: 697px) {
+        width: 572px;
+    }
+    @media all and (max-width: 619px) {
+        width: 472px;
+    }
+    @media all and (max-width: 519px) {
+        width: 372px;
+    }
+    @media all and (max-width: 419px) {
+        width: 272px;
+    }
+}
+
+.succes_order {
+    margin-top: 30px;
+}        
+
+.fa-check-circle {
+    margin-bottom: 20px;
+    color: $tertiary_clr;
+    font-size: 3.5em;
+    animation: 0.8s simplerotate 0.5s  ease-in-out;  
+    @media all and (max-width: 519px) {
+        font-size: 3em;
+    }
+    @media all and (max-width: 419px) {
+        font-size: 2.8em;
+    }
+}
+
+.email_infos {
+    margin-bottom: 15px;
+    font-size: 1.2em;
+    font-weight: bold;
+    padding: 0 70px;
+    @media all and (max-width: 519px) {
+        padding: 0 20px;
+        font-size: 1.1em;
+    }
+    @media all and (max-width: 419px) {
+        font-size: 1em;
+    }
+}
+
+.thanks_user {
+    margin-bottom: 26px;
+    color: $fourth_clr;
+    font-size: 1.2em;
+    font-weight: bold;
+    @media all and (max-width: 519px) {
+        padding: 0 20px;
+        font-size: 1.1em;
+    }
+    @media all and (max-width: 419px) {
+        font-size: 1em;
+    }
+}
+
+.order_infos {
+    background-color: white;
+    padding: 10px 0;
+    @media all and (max-width: 519px) {
+        font-size: 0.9em;
+    }
+    @media all and (max-width: 419px) {
+        padding: 10px 20px;
+    }
+}
+
+.order_number {
+    margin-bottom: 15px;
+    & p:nth-child(1) {
+        margin-bottom: 5px;
+    }
+}
+
+.order_amount {
+    & p:nth-child(1) {
+        margin-bottom: 5px;
+    }
+}

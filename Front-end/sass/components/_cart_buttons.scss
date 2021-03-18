@@ -1,0 +1,59 @@
+//* Import utils *//
+
+@import "../utils/_mixins";
+@import "../utils/_variables";
+
+//* Style sur les boutons de validation/suppression du panier *//
+
+#buttons_cart {
+    display: flex;
+    justify-content: center;
+    margin: 0 20px 40px;
+    animation: 0.6s fadeIn ease-out backwards;
+    @media all and (max-width: 409px) {
+        display: flex;
+        flex-direction: column;
+    }
+
+}
+
+.delete_allcameras {
+    @include button;
+    font-size: 1em;
+    margin-right: 15px;
+    background: $fourth_clr; 
+    color: $secondary_clr;
+    border: 2px solid $fourth_clr; 
+    &:hover {
+        background: $secondary_clr;
+        color: $fourth_clr;
+        transition: 0.6s;
+    }
+    @media all and (max-width: 549px) {
+        font-size: 0.9em;
+    } 
+    @media all and (max-width: 409px) {
+        margin: 0 auto 15px;
+        padding: 10px 53px;
+    }
+}
+
+.continue_order {
+    @include button;
+    font-size: 1em;
+    margin-left: 15px;
+    background: $tertiary_clr; 
+    color: $secondary_clr;
+    border: 2px solid $tertiary_clr; 
+    &:hover, &:focus {
+        background: $secondary_clr;
+        color: $tertiary_clr;
+        transition: 0.6s;
+    }
+    @media all and (max-width: 549px) {
+        font-size: 0.9em;
+    } 
+    @media all and (max-width: 409px) {
+        margin: 0 auto 0;
+    }
+}

@@ -1,0 +1,43 @@
+//* Import utils *//
+
+@import "../utils/_mixins";
+@import "../utils/_variables";
+@import "../utils/_animations";
+
+
+//* Style sur l'encart du panier vide *//
+
+.empty_cart {
+    width: 600px;
+    border: white 4px solid;
+    border-radius: 15px;
+    box-shadow: 0px 3px 8px 2px rgb(200, 200, 200);
+    color: $primary_clr;
+    background-color: $secondary_clr;
+    animation: 0.6s fadeIn ease-out backwards;
+    margin: 40px auto;
+    padding: 0 15px;
+    font-size: 1.3em;
+    text-align: center;
+    @media all and (max-width: 677px) {
+        width: 470px;
+    }
+    @media all and (max-width: 547px) {
+        width: 370px;
+    }
+    @media all and (max-width: 447px) {
+        width: 270px;
+    }
+    @media all and (max-width: 347px) {
+        width: 242px;
+    }
+}
+
+.empty_bag {
+    font-size: 3em;
+    color: $tertiary_clr;
+    animation: 2s rotate infinite ease-in-out paused;  
+    &:hover {
+        animation-play-state: running;
+    } 
+}

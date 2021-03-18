@@ -1,0 +1,142 @@
+//* Import utils *//
+
+@import "../utils/_mixins";
+@import "../utils/_variables";
+@import "../utils/_animations";
+
+//* Style sur les cards appareil photos des pages produits *//
+
+#product_details {
+    min-width: 320px;
+}
+
+.camera_card_product {
+    width: 650px;
+    overflow: hidden;
+    margin: 40px auto 40px auto;
+    border: white 4px solid;
+    border-radius: 15px;
+    box-shadow: 0px 3px 8px 2px rgb(200, 200, 200);
+    color: $primary_clr;
+    background-color: $secondary_clr;
+    animation: 0.6s fadeIn ease-out backwards;
+    &:hover{
+        @include boxshadow
+    }
+    @media all and (max-width: 750px) {
+        width: 572px;
+    }
+    @media all and (max-width: 650px) {
+        width: 472px;
+    }
+    @media all and (max-width: 550px) {
+        width: 372px;
+    }
+    @media all and (max-width: 450px) {
+        width: 272px;
+    }
+}
+
+.frame_img_product {
+    width: 100%;
+    overflow: hidden;
+}
+
+.camera_img_product {
+    width: 650px;
+    border-bottom: white 4px solid;
+    @media all and (max-width: 750px) {
+        width: initial;
+        height: 380px;
+    }
+    @media all and (max-width: 650px) {
+        width: initial;
+        height: 380px;
+        position: relative;
+        right: 50px;
+    }
+    @media all and (max-width: 550px) {
+        width: initial;
+        height: 280px;
+        position: relative;
+        right: 30px;
+    }
+    @media all and (max-width: 450px) {
+        width: initial;
+        height: 280px;
+        position: relative;
+        right: 80px;
+    }
+}
+
+.camera_description_product {
+    margin: 15px 20px;
+    text-align: justify;
+}
+
+.camera_price_product {
+    color : $fourth_clr;
+    font-weight: bold;
+    font-size: 1.2em;
+    margin: 15px 20px 25px;
+    text-align: justify;
+}
+
+.camera_name_product {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: 15px 20px;
+    text-align: justify;
+}
+
+.label_lenses {  
+    margin-left: 20px;
+    font-size: 1em;
+    padding: 10px 10px 10px 15px;
+    border-radius: 15px 0 0 15px;
+    background-color: white;
+    border: 2px solid $tertiary_clr;
+    border-right: transparent;
+    color: $primary_clr;
+    &:hover {
+            @include buttonhover;
+            background: $primary_clr;
+            border-color : $primary_clr;
+            color: white;
+    } 
+    &:hover + #select_lenses {
+        border-color: $primary_clr;
+        transition: 0.6s;
+    }
+    @media all and (max-width: 450px) {
+        font-size : 0.9em;
+        } 
+}
+
+#select_lenses {
+    font-family: $font_text;
+    font-size: 1em;
+    height: 43px;
+    background-color: white;
+    padding-left: 10px;
+    border: 2px $tertiary_clr solid;
+    border-radius: 0 15px 15px 0;
+    cursor: pointer;
+    @media all and (max-width: 450px) {
+        font-size : 0.9em;
+        height: 42px;
+        }  
+}
+
+.add_cart_button {
+    display: block;
+    margin: 25px auto 15px;
+    font-size: 1em;
+    @include button;
+    &:hover {
+        @include buttonhover;
+    } 
+    @media all and (max-width: 450px) {
+        font-size : 0.9em;
+        }   
+}

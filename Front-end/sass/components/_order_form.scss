@@ -1,0 +1,302 @@
+//* Import utils *//
+
+@import "../utils/_mixins";
+@import "../utils/_variables";
+
+//* Style sur le formulaire de commande *//
+
+#order_container_form {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+
+}
+
+.order_form {
+    width: 650px;
+    margin: 10% auto;
+    background-color: $secondary_clr;
+    color: $primary_clr;
+    border: white 4px solid;
+    border-radius: 15px;
+    box-shadow: 0px 3px 8px 2px rgb(200, 200, 200);
+    text-align: center;
+    & h2 {
+        font-size: 1.3em;
+        margin: 30px 0 10px 0;
+    }
+    & p {
+        font-size: 1em;
+        color: $tertiary_clr;
+        margin: 0 0 20px 0;
+        @media all and (max-width: 647px) {
+            color: $fourth_clr;
+            padding: 0 15px;
+            font-size: 0.9em;
+        }
+    }
+    & input {
+        font-family: 'roboto';
+        font-size: 1em;
+    }
+    & label {
+        font-weight: bold;
+    }
+    @media all and (max-width: 697px) {
+        width: 600px;
+    }
+    @media all and (max-width: 647px) {
+        width: 500px;
+        margin: 5% auto;
+        & h2 {
+            font-size: 1.1em;
+        }
+        & label {
+            font-size: 0.9em;
+        }
+        & input {
+            font-size: 0.9em;
+            margin-right: auto;
+        }
+        @media all and (max-width: 547px) {
+            width: 272px;
+        }
+    }
+}
+
+.close_form {
+    position: relative;
+    float: right;
+    cursor: pointer;
+    font-size: 1.2em;
+    padding: 10px 10px 0 0;
+    font-weight: bold;
+}
+
+.name_container_form {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 15px;
+    & input:focus  {
+        box-shadow: 0px 0px 8px 3px $tertiary_clr;
+        outline: none;
+    }
+    @media all and (max-width: 647px) {
+        flex-direction: column;
+        padding: 0 130px;
+        & input:focus {
+            box-shadow: 0px 0px 8px 3px $fourth_clr;
+        } 
+    }
+    @media all and (max-width: 547px) {
+        padding: 0 15px;
+    }
+}
+
+.lastname_container_form {
+    & input {
+        margin : 0 10px 0 5px;
+        padding-left: 10px;
+        padding: 0 10px;
+        height: 1.8em;
+        border-radius: 10px;
+        border : $tertiary_clr 1px solid;
+        @media all and (max-width: 647px) {
+            margin: 0 0 15px 5px;
+            border-color: $fourth_clr;
+            width: 178px;
+        }
+        @media all and (max-width: 547px) {
+            width: 180px;
+        }
+    }
+}
+
+.firstname_container_form {
+    & label {
+        margin-left: 10px;
+        @media all and (max-width: 647px) {
+            margin-left: 0;
+        }
+    }
+    & input {
+        margin-left: 5px;
+        padding: 0 10px;
+        height: 1.8em;
+        border-radius: 10px;
+        border : $tertiary_clr 1px solid;
+        @media all and (max-width: 647px) {
+            border-color: $fourth_clr;
+            width: 158px;
+        }
+        @media all and (max-width: 547px) {
+            width: 160px;
+        }
+    }
+}
+
+.adress_container_form {
+    margin-bottom: 15px;
+    @media all and (max-width: 647px) {
+        padding: 0 130px;
+    }
+    @media all and (max-width: 547px) {
+        padding: 0 15px;
+    }
+    & input {
+        margin-left: 5px;
+        padding: 0 10px;
+        height: 1.8em;
+        border-radius: 10px;
+        border : $tertiary_clr 1px solid;
+        &:focus {
+            box-shadow: 0px 0px 8px 3px $tertiary_clr;
+            outline: none;
+        }
+        @media all and (max-width: 647px) {
+            border-color: $fourth_clr;
+            width: 155px;
+            &:focus {
+                box-shadow: 0px 0px 8px 3px $fourth_clr;
+            }    
+        }
+        @media all and (max-width: 547px) {
+            width: 157px;
+        }
+    }
+}
+
+.city_postalcode_container_form {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 15px;
+    & input:focus  {
+        box-shadow: 0px 0px 8px 3px $tertiary_clr;
+        outline: none;
+    }
+    @media all and (max-width: 647px) {
+        flex-direction: column;
+        padding: 0 130px;
+        & input:focus {
+            box-shadow: 0px 0px 8px 3px $fourth_clr;
+        }  
+    }
+    @media all and (max-width: 547px) {
+        padding: 0 15px;
+    }
+}
+
+.city_container_form {
+    & input {
+        margin : 0 10px 0 5px;
+        padding: 0 10px;
+        height: 1.8em;
+        border-radius: 10px;
+        border : $tertiary_clr 1px solid;
+        @media all and (max-width: 647px) {
+            margin: 0 0 15px 5px;
+            border-color: $fourth_clr;
+            width: 180px;
+        }    
+        @media all and (max-width: 547px) {
+            width: 182px;
+        }
+    }
+}
+
+.postalcode_container_form {
+    & label {
+        margin-left: 10px;
+        @media all and (max-width: 647px) {
+            margin-left: 0px;
+        }
+    }
+    & input {
+        margin-left: 5px;
+        padding: 0 10px;
+        height: 1.8em;
+        border-radius: 10px;
+        border : $tertiary_clr 1px solid;
+        @media all and (max-width: 647px) {
+            border-color: $fourth_clr;   
+            width: 131px;
+        }
+        @media all and (max-width: 547px) {
+            width: 133px;
+        }
+    }
+}
+
+.email_container_form {
+    @media all and (max-width: 647px) {
+        padding: 0 130px;
+    }
+    @media all and (max-width: 547px) {
+        padding: 0 15px;
+    }
+    & input {
+        margin-left: 5px;
+        padding: 0 10px;
+        height: 1.8em;
+        border-radius: 10px;
+        border : $tertiary_clr 1px solid;
+        &:focus {
+            box-shadow: 0px 0px 8px 3px $tertiary_clr;
+            outline: none;
+        }
+        @media all and (max-width: 647px) {
+            border-color: $fourth_clr;
+            width: 173px;
+            &:focus {
+                box-shadow: 0px 0px 8px 3px $fourth_clr;
+            }    
+        }
+        @media all and (max-width: 547px) {
+            width: 175px;
+        }
+    }
+}
+
+.buttons_container_form {
+    margin: 30px 0;
+}
+
+.delete_button_form {
+    margin-right: 15px;
+    @include button;
+    background: $fourth_clr; 
+    color: $secondary_clr;
+    border: 2px solid $fourth_clr; 
+    &:hover, &:focus {
+        background: $secondary_clr;
+        color: $fourth_clr;
+        transition: 0.6s;
+    }
+    @media all and (max-width: 547px) {
+        margin: 0 0 15px 0;
+    }
+}
+
+.order_button_form {
+    margin-left: 15px;
+    @include button;
+    background: $tertiary_clr; 
+    color: $secondary_clr;
+    border: 2px solid $tertiary_clr; 
+    &:hover, &:focus {
+        background: $secondary_clr;
+        color: $tertiary_clr;
+        transition: 0.6s;
+    }
+    @media all and (max-width: 547px) {
+        margin-left: 0;
+        padding: 10px 29px;
+    }
+}    

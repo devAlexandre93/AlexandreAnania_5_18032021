@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+    <head>
+
+        <meta charset="utf-8"/>
+        <title> Orinoco | Appareils photo vintage </title>
+        <meta name="description" content="Orinoco est un site de vente en ligne d'appareils photo vintage">
+        <!-- Viewport--> 
+            <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+         <!-- Open Graph (pour les partages)--> 
+         <meta property="og:type" content="website"/>
+         <meta property="og:title" content=" Orinoco | Choissisez votre appareil photo vintage"/>
+         <meta property="og:url" content=""/>
+         <meta property="og:image" content="img/camera-retro-solid.svg"/>
+         <meta property="og:description" content="Projet réalisé dans le cadre de la formation développeur web d'Openclassrooms"/>
+        <!-- Icône navigateur-->   
+            <link rel="icon" type="image/png" href="img/camera-retro-solid.svg" />
+        <!-- Feuilles de styles-->    
+            <link rel="stylesheet" type="text/css" href="sass/style.css"/>
+        <!-- Google Fonts -->
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap">
+        <!-- Kit d'icône -->
+            <script src="https://kit.fontawesome.com/f7380e3789.js" crossorigin="anonymous"></script> 
+        <!-- Javascript -->
+        <script type="text/javascript" src="classes/Cart.js" defer></script>  
+        <script type="text/javascript" src="js/panier.js" defer></script>    
+
+    </head>
+
+    <body>
+
+        <header> <!-- Contient le logo au centre + nav à droite -->
+            <img id="logo" src="img/logo_orinoco.png" alt="Logo du site de vente en ligne d'appareils photo vintage : Orinoco"> 
+            <nav>
+                <a class="nav_links" href="index.html"> Accueil </a>
+                <a class="nav_links" href="panier.html"> Panier <i class="fas fa-shopping-bag"></i> <span id="cart_number">0</span> </a>
+            </nav>
+        </header>   
+
+        <main> <!-- Contient le titre principal + le panier -->
+                <h1> Votre panier</h1>
+                <section id="shopping_cart">
+                    <table class="table_cart">
+                        <thead class="table_head">
+                            <tr>
+                                <th class="category_cart"> Appareil photo </th>
+                                <th class="category_cart"> Objectif </th>
+                                <th class="category_cart"> Quantité </th>
+                                <th class="category_cart"> Prix unitaire </th>
+                                <th class="category_cart"> Prix total </th>
+                            </tr>    
+                        </thead>   
+                        <tbody id="table_body"></tbody> 
+                        <tfoot class="table_foot">
+                            <tr>
+                                <td colspan="4" id="amount_total_cart"> Montant total de votre panier : </td>
+                                <td id="total_price"> </td>
+                            </tr>    
+                        </tfoot>   
+                    </table>
+                    <div id="buttons_cart"></div>
+                    <div id="order_container_form"> </div>
+                </section>
+        </main>
+
+        <footer> <!-- Contient des liens + copyright -->
+                <div id="footer_links">
+                    <a href="#"> Mentions légales </a>
+                    <a href="#"> Conditions générales de vente </a>
+                    <a href="mailto:contact@orinoco.com"> Nous contacter </a>
+                </div>
+                <p> © 2021 - Orinoco </p>
+        </footer>
+
+   </body>
+   
+</html>
