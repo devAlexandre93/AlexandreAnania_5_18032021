@@ -10,7 +10,8 @@ getCamera()
 const cart = new Cart;
 cart.showCartNumber();
 
-/* Fonction affichant l' appareil photo sélectionné sur la page produit.html */
+/* Fonction affichant l' appareil photo sélectionné sur la page produit.html
+Contient un évènement pour ajouter un appareil photo au panier */
 
 function displayCamera(camera) {
     const productDetails = document.getElementById('product_details');
@@ -34,7 +35,6 @@ function displayCamera(camera) {
       for (let i=0; i < addInCart.length; i ++) {
       addInCart[i].addEventListener('click',() => {
       cartNumber(camera);
-      totalCost(camera);
       })
       }   
 }
@@ -105,16 +105,4 @@ function Items(camera) {
         }
     }
     localStorage.setItem("myCart", JSON.stringify(myCart))
-}
-
-/* Fonction utilisant le Local Storage, calcule le prix total des appareils photos sélectionnés */
-
-function totalCost (camera) {
-    let cartCost = localStorage.getItem('cartCost');
-    if (cartCost != null) {
-        cartCost = parseInt(cartCost);
-        localStorage.setItem ("cartCost", cartCost + camera.price/100);
-    } else {
-        localStorage.setItem ("cartCost", camera.price/100)
-    }
 }

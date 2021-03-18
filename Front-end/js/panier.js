@@ -3,9 +3,7 @@ const myCart = JSON.parse(localStorage.getItem("myCart"));
 //* Fonction faisant apparaitre le panier s'il y au moins un appareil photo sélectionné *//
 
 function displayCart () {
-    let cartCost = localStorage.getItem ('cartCost');
     let tableBody = document.getElementById ("table_body");
-    let totalPrice = document.getElementById ("total_price");
     let buttonsCart = document.getElementById ("buttons_cart");
     let shoppingCart = document.getElementById ("shopping_cart");
     if (myCart) {
@@ -18,14 +16,12 @@ function displayCart () {
                     <td class="unity_price_table_cart"> ${camera.price/100} € </td>
                     <td class="global_price_table_cart"> ${camera.price/100*camera.quantity} € </td>
                 </tr>`;
-            totalPrice.innerHTML =
-                `${cartCost} €
-                `;
-                buttonsCart.innerHTML =
+            buttonsCart.innerHTML =
                 `
                 <button class="delete_allcameras" type="button" onclick="localStorage.clear(), window.location.reload()"> Vider le panier </button>
                 <button class="continue_order" type="button" onclick="showOrderForm()"> Poursuivre la commande </button>
-                `;    
+                `;
+            totalPrice ()        
         })
     } else {
         shoppingCart.innerHTML =
@@ -37,6 +33,24 @@ function displayCart () {
 }
 
 displayCart ()
+
+//* Fonction calculant et affichant le montant total du panier *//
+
+function totalPrice () {
+    let cartCamerasContainer = document.getElementsByClassName ('table_body') [0];
+    let cameraRows = cartCamerasContainer = document.getElementsByClassName ('camera_row');
+    let cartCost = 0;
+    for (let i = 0; i < cameraRows.length; i++) {
+        let cameraRow = cameraRows [i];
+        let globalPriceElement = cameraRow.getElementsByClassName ('global_price_table_cart') [0];
+        let globalPrice = parseFloat(globalPriceElement.innerText.replace('€', ''));
+        cartCost = cartCost + globalPrice;
+    }
+    let totalPrice = document.getElementById ("total_price");
+    totalPrice.innerHTML =totalPrice.innerHTML =
+        `${cartCost} €
+        `;
+}   
 
 const cart = new Cart;
 cart.showCartNumber();
@@ -53,32 +67,32 @@ function showOrderForm() {
             <div class="name_container_form">
                 <div class="lastname_container_form">
                     <label for="lastname">Nom</label>
-                    <input type="text" id="lastname" name="lastname"/>
+                    <input type="text" id="lastname" name="lastname" required/>
                 </div>
                 <div class="firstname_container_form">
                     <label for="firstname">Prénom</label>
-                    <input type="text" id="firstname" name="firstname"/>
+                    <input type="text" id="firstname" name="firstname" required/>
                 </div>
             </div>
             <div class="adress_container_form">
                 <label for="adress">Adresse</label>
-                <input type="text" id="adress" name="adress"/>
+                <input type="text" id="adress" name="adress" required/>
             </div>
             <div class="city_postalcode_container_form">
                 <div class="city_container_form">
                     <label for="city">Ville</label>
-                    <input type="text" id="city" name="city"/>
+                    <input type="text" id="city" name="city" required/>
                 </div>
                 <div class="postalcode_container_form">
                     <label for="postalcode">Code postal</label>
-                    <input type="text" id="postalcode" name="postalcode"/>
+                    <input type="text" id="postalcode" name="postalcode" required/>
                     <div id="error_postalcode"></div>
                 </div>
             </div>
             <div class="email_container_form">
                 <label for="email">Email</label>
-                <input type="email" id="email" name="email"/>
-                <div id="error_email"></div>
+                <input type="email" id="email" name="email"/ required>
+                <div id="error_email"> </div>
             </div>
             <div class="buttons_container_form">
                 <input type="reset" id="delete" name="delete" class="delete_button_form" value="Effacer les informations"/>
@@ -89,11 +103,24 @@ function showOrderForm() {
   }
 
 /* Evènement permettant de valider sa commande et d'être redirigé vers la page de commande
-Il est exécuté au clic du bouton "Passer la commande" */
+Il est exécuté au clic du bouton "Passer la commande"
+Présence de regex pour vérifier ue le formulaire est correctement rempli */
 
 document.addEventListener('DOMContentLoaded', () => {
-    document.getElementById('order_container_form').addEventListener('submit', function(event){
-        event.preventDefault(); 
+    document.getElementById('shopping_cart').addEventListener('submit', function(event){
+        event.preventDefault();
+        const postalCode = document.getElementById('postalcode');
+        const validPostalCode = /[0-9]{5}/;
+        const email = document.getElementById('email');
+        const validEmail = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+        if (validPostalCode.test(postalCode.value) == false) {
+            document.getElementById('error_postalcode').innerHTML = "<p> 5 chiffres obligatoires pour le code postal <p>";
+            return false
+        }
+        if (validEmail.test(email.value) == false) {
+            document.getElementById('error_email').innerHTML = "<p> Veuillez renseigner une adresse e-mail valide <p>";
+            return false
+        }
         postRequest();
         toOrderPage();
         localStorage.clear();
@@ -101,9 +128,16 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });  
 
+/* Evènement pour effacer les champs et les messages d'erreur du formulaire */
+
+document.getElementById('shopping_cart').addEventListener('reset', function() {
+    document.getElementById('error_postalcode').innerHTML = "";
+    document.getElementById('error_email').textContent = "";
+  });
+
 /* Fonction utlisant les méthodes FETCH et POST
 Récupére les informations saisies dans le formulaire et l'ID des appareils photos séléctionnés dans le Local Storage
-Grâce à ces informations, récupére le numéro de commande nécéssaire à la validation depuis l'API
+Grâce à ces informations, le numéro de commande nécéssaire à la validation depuis l'API est obtenu
 Enregistre ces données dans le Local Storage */
   
 function postRequest() {

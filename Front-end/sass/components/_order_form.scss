@@ -234,6 +234,30 @@
     }
 }
 
+#error_postalcode, #error_email {
+    & p {
+        color: red;
+        margin: 0;
+        padding: 5px;
+        margin-bottom: -10px;
+        font-size: 0.9em;
+        @media all and (max-width: 647px) {
+            font-size: 0.8em;
+        }
+        @media all and (max-width: 547px) {
+            padding: 5px 40px 0;
+        }
+    }   
+    & p:nth-child(1) {
+        @media all and (max-width: 647px) {
+            margin-bottom: -8px;
+        }    
+        @media all and (max-width: 547px) {
+            margin-bottom: 2px;
+        }
+    } 
+}
+
 .email_container_form {
     @media all and (max-width: 647px) {
         padding: 0 130px;
@@ -266,6 +290,9 @@
 
 .buttons_container_form {
     margin: 30px 0;
+    @media all and (max-width: 547px) {
+        margin: 20px 0 30px;
+    }
 }
 
 .delete_button_form {

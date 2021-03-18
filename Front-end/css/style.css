@@ -1556,6 +1556,38 @@ tfoot {
   }
 }
 
+#error_postalcode p, #error_email p {
+  color: red;
+  margin: 0;
+  padding: 5px;
+  margin-bottom: -10px;
+  font-size: 0.9em;
+}
+
+@media all and (max-width: 647px) {
+  #error_postalcode p, #error_email p {
+    font-size: 0.8em;
+  }
+}
+
+@media all and (max-width: 547px) {
+  #error_postalcode p, #error_email p {
+    padding: 5px 40px 0;
+  }
+}
+
+@media all and (max-width: 647px) {
+  #error_postalcode p:nth-child(1), #error_email p:nth-child(1) {
+    margin-bottom: -8px;
+  }
+}
+
+@media all and (max-width: 547px) {
+  #error_postalcode p:nth-child(1), #error_email p:nth-child(1) {
+    margin-bottom: 2px;
+  }
+}
+
 @media all and (max-width: 647px) {
   .email_container_form {
     padding: 0 130px;
@@ -1601,6 +1633,12 @@ tfoot {
 
 .buttons_container_form {
   margin: 30px 0;
+}
+
+@media all and (max-width: 547px) {
+  .buttons_container_form {
+    margin: 20px 0 30px;
+  }
 }
 
 .delete_button_form {
@@ -1732,7 +1770,7 @@ tfoot {
   width: 650px;
   overflow: hidden;
   margin: 40px auto 40px auto;
-  border: white 4px solid;
+  border: #261624 4px solid;
   border-radius: 15px;
   -webkit-box-shadow: 0px 3px 8px 2px #c8c8c8;
           box-shadow: 0px 3px 8px 2px #c8c8c8;
@@ -1854,8 +1892,11 @@ tfoot {
 }
 
 .order_infos {
-  background-color: white;
+  background-color: #261624;
+  color: #F3E9F1;
   padding: 10px 0;
+  border: #F3E9F1 4px solid;
+  border-radius: 0 0 15px 15px;
 }
 
 @media all and (max-width: 519px) {
@@ -1876,10 +1917,12 @@ tfoot {
 
 .order_number p:nth-child(1) {
   margin-bottom: 5px;
+  color: #8F5BFE;
 }
 
 .order_amount p:nth-child(1) {
   margin-bottom: 5px;
+  color: #8F5BFE;
 }
 
 main {
