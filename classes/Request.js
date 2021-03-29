@@ -5,7 +5,7 @@ class Request {
     /* Fonction utlisant la méthode FETCH pour obtenir le tableau des apareils photo depuis l'API */
 
     getRequest() {
-        return fetch ("http://aa-oc-p5-api.herokuapp.com/api/cameras")
+        return fetch ("https://aa-oc-p5-api.herokuapp.com/api/cameras")
         .then(function(response) {
             return response.json ()
         })
@@ -22,7 +22,7 @@ class Request {
     getRequestId() {
         let params = (new URL(document.location)).searchParams;
         let cameraId = params.get('camera_id');
-        return fetch ("http://aa-oc-p5-api.herokuapp.com/api/cameras/" + cameraId)
+        return fetch ("https://aa-oc-p5-api.herokuapp.com/api/cameras/" + cameraId)
         .then(function(response) {
             return response.json ()
         })
@@ -52,7 +52,7 @@ class Request {
             },
             products: tableId, 
         }
-        fetch ("http://aa-oc-p5-api.herokuapp.com/api/cameras/order", {
+        fetch ("https://aa-oc-p5-api.herokuapp.com/api/cameras/order", {
             method: "POST",
             body: JSON.stringify(order),
             headers: {"Content-Type": "application/json"}
