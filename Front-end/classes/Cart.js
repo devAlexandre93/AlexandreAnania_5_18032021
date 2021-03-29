@@ -45,7 +45,7 @@ class Cart {
         localStorage.setItem("myCart", JSON.stringify(myCart))
     }
 
-    /* Fonction permettant d'afficher le nombre de produit présent dans le panier dans le header en haut à gauche sur toutes les pages */
+    /* Fonction permettant d'afficher le nombre de produit présent dans le panier dans le header en haut à droite sur toutes les pages */
 
     showCartNumber() {
         let inCart = localStorage.getItem ('inCart');
