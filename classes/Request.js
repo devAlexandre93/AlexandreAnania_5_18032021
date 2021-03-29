@@ -5,7 +5,7 @@ class Request {
     /* Fonction utlisant la méthode FETCH pour obtenir le tableau des apareils photo depuis l'API */
 
     getRequest() {
-        return fetch ("http://localhost:3000/api/cameras")
+        return fetch ("http://aa-oc-p5-api.herokuapp.com/api/cameras")
         .then(function(response) {
             return response.json ()
         })
@@ -13,7 +13,7 @@ class Request {
             return cameras
         })
         .catch(function(error){
-            alert("Une erreur est survenue. N'oubliez pas de lancer le serveur depuis le dossier Back-end.")
+            alert("Une erreur est survenue. Porblème potentiel avec le serveur distant Heroku.")
         })
     }
 
@@ -22,7 +22,7 @@ class Request {
     getRequestId() {
         let params = (new URL(document.location)).searchParams;
         let cameraId = params.get('camera_id');
-        return fetch ("http://localhost:3000/api/cameras/" + cameraId)
+        return fetch ("http://aa-oc-p5-api.herokuapp.com/api/cameras/" + cameraId)
         .then(function(response) {
             return response.json ()
         })
@@ -30,7 +30,7 @@ class Request {
             return camera
         })
         .catch(function(error){
-            alert("Une erreur est survenue. N'oubliez pas de lancer le serveur depuis le dossier Back-end.")
+            alert("Une erreur est survenue. Porblème potentiel avec le serveur distant Heroku.")
         })
     }
     
@@ -52,7 +52,7 @@ class Request {
             },
             products: tableId, 
         }
-        fetch ("http://localhost:3000/api/cameras/order", {
+        fetch ("http://aa-oc-p5-api.herokuapp.com/api/cameras/order", {
             method: "POST",
             body: JSON.stringify(order),
             headers: {"Content-Type": "application/json"}
