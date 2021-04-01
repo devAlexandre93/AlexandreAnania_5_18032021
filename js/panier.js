@@ -1,8 +1,8 @@
 /* Fonctions en lien avec le panier */
 
 const cart = new Cart;
-cart.displayCart();
 cart.showCartNumber();
+cart.displayCart();
 
 /* Fonctions en lien avec le formulaire */
 

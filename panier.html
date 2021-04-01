@@ -22,7 +22,8 @@
             <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap">
         <!-- Kit d'icône -->
             <script src="https://kit.fontawesome.com/f7380e3789.js" crossorigin="anonymous"></script> 
-        <!-- Javascript -->  
+        <!-- Javascript -->
+            <script type="text/javascript" src="classes/Modal.js" defer></script>   
             <script type="text/javascript" src="classes/Form.js" defer></script>
             <script type="text/javascript" src="classes/Cart.js" defer></script> 
             <script type="text/javascript" src="classes/Request.js" defer></script>
@@ -51,6 +52,7 @@
                                 <th class="category_cart"> Quantité </th>
                                 <th class="category_cart"> Prix unitaire </th>
                                 <th class="category_cart"> Prix total </th>
+                                <th class="category_cart"> </th>
                             </tr>    
                         </thead>   
                         <tbody id="table_body"></tbody> 
@@ -58,11 +60,13 @@
                             <tr>
                                 <td colspan="4" id="amount_total_cart"> Montant total de votre panier : </td>
                                 <td id="total_price"> </td>
+                                <td> </td>
                             </tr>    
                         </tfoot>   
                     </table>
                     <div id="buttons_cart"></div>
                     <div id="order_container_form"> </div>
+                    <div id="modal"> </div>
                 </section>
         </main>
 

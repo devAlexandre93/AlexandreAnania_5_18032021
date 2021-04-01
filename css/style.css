@@ -719,8 +719,7 @@ nav {
 }
 
 .category_cart:nth-child(2) {
-  width: 17.5%;
-  border-right: white 4px solid;
+  width: 20%;
 }
 
 @media all and (max-width: 449px) {
@@ -731,8 +730,7 @@ nav {
 }
 
 .category_cart:nth-child(3) {
-  width: 17.5%;
-  border-right: white 4px solid;
+  width: 14%;
 }
 
 @media all and (max-width: 449px) {
@@ -745,8 +743,13 @@ nav {
 }
 
 .category_cart:nth-child(4) {
-  width: 17.5%;
-  border-right: white 4px solid;
+  width: 14%;
+}
+
+@media all and (max-width: 549px) {
+  .category_cart:nth-child(4) {
+    width: 18%;
+  }
 }
 
 @media all and (max-width: 449px) {
@@ -756,14 +759,29 @@ nav {
 }
 
 .category_cart:nth-child(5) {
-  width: 17.5%;
-  border-right: white 4px solid;
+  width: 14%;
+}
+
+@media all and (max-width: 549px) {
+  .category_cart:nth-child(5) {
+    width: 18%;
+  }
 }
 
 @media all and (max-width: 449px) {
   .category_cart:nth-child(5) {
     width: 26%;
     border-right: none;
+  }
+}
+
+.category_cart:nth-child(6) {
+  width: 8%;
+}
+
+@media all and (max-width: 549px) {
+  .category_cart:nth-child(6) {
+    width: 0%;
   }
 }
 
@@ -837,9 +855,65 @@ nav {
   border-right: white 2px solid;
 }
 
-@media all and (max-width: 449px) {
+@media all and (max-width: 549px) {
   .global_price_table_cart {
     border-right: none;
+  }
+}
+
+.delete_table_cart {
+  text-align: center;
+  border-bottom: white 2px solid;
+}
+
+@media all and (max-width: 729px) {
+  .delete_table_cart {
+    padding: 0 5px;
+  }
+}
+
+@media all and (max-width: 549px) {
+  .delete_table_cart {
+    display: none;
+  }
+}
+
+.delete_camera {
+  background: #261624;
+  color: #F3E9F1;
+  border: 2px solid #261624;
+  border-radius: 15px;
+  padding: 10px 20px;
+  -webkit-box-shadow: 0px 3px 8px 3px #c8c8c8;
+          box-shadow: 0px 3px 8px 3px #c8c8c8;
+  cursor: pointer;
+  padding: 9px;
+}
+
+.delete_camera:focus {
+  outline: none;
+  background: #F3E9F1;
+  color: #261624;
+  -webkit-transition: 0.6s;
+  transition: 0.6s;
+}
+
+.delete_camera:hover {
+  background: #F3E9F1;
+  color: #261624;
+  -webkit-transition: 0.6s;
+  transition: 0.6s;
+}
+
+@media all and (max-width: 729px) {
+  .delete_camera {
+    font-size: 0.7em;
+  }
+}
+
+@media all and (max-width: 649px) {
+  .delete_camera {
+    font-size: 0.6em;
   }
 }
 

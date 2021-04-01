@@ -53,16 +53,14 @@
         } 
     }
     &:nth-child(2){
-        width: 17.5%;
-        border-right: white 4px solid;
+        width: 20%;
         @media all and (max-width: 449px) {
             display: none;
             width: 0%;
         } 
     }
     &:nth-child(3){
-        width: 17.5%;
-        border-right: white 4px solid;
+        width: 14%;
         @media all and (max-width: 449px) {
             overflow: hidden;
             text-overflow: ellipsis;
@@ -71,18 +69,29 @@
         } 
     }
     &:nth-child(4){
-        width: 17.5%;
-        border-right: white 4px solid;
+        width: 14%;
+        
+        @media all and (max-width: 549px) {
+            width: 18%;
+        } 
         @media all and (max-width: 449px) {
             width: 26%;
         } 
     }
     &:nth-child(5){
-        width: 17.5%;
-        border-right: white 4px solid;
+        width: 14%;
+        @media all and (max-width: 549px) {
+            width: 18%;
+        } 
         @media all and (max-width: 449px) {
             width: 26%;
             border-right: none;
+        } 
+    }
+    &:nth-child(6){
+        width: 8%;
+        @media all and (max-width: 549px) {
+            width: 0%;
         } 
     }
 }
@@ -139,8 +148,33 @@
     text-align: center;
     border-bottom: white 2px solid;
     border-right: white 2px solid;
-    @media all and (max-width: 449px) {
+    @media all and (max-width: 549px) {
         border-right: none;
+    } 
+}
+
+.delete_table_cart {
+    text-align: center;
+    border-bottom: white 2px solid;
+    @media all and (max-width: 729px) {
+        padding: 0 5px;
+        }   
+    @media all and (max-width: 549px) {
+        display: none;
+    }           
+}
+
+.delete_camera {
+    @include button;
+    padding: 9px;
+    &:hover {
+        @include buttonhover
+    }
+    @media all and (max-width: 729px) {
+        font-size: 0.7em;
+    }    
+    @media all and (max-width: 649px) {
+        font-size: 0.6em;
     } 
 }
 

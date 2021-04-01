@@ -13,7 +13,7 @@ class Request {
             return cameras
         })
         .catch(function(error){
-            alert("Une erreur est survenue. Prolème potentiel avec le serveur distant Heroku.")
+            alert("Une erreur est survenue. Prolème potentiel avec le serveur distant Heroku, essayez d'actualiser la page.")
         })
     }
 
@@ -30,7 +30,7 @@ class Request {
             return camera
         })
         .catch(function(error){
-            alert("Une erreur est survenue. Prolème potentiel avec le serveur distant Heroku.")
+            alert("Une erreur est survenue. Prolème potentiel avec le serveur distant Heroku, essayez d'actualiser la page.")
         })
     }
     

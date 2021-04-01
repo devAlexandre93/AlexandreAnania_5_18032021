@@ -6,7 +6,7 @@ class Modal {
     Confirme que l'appareil photo a bien été ajouté au panier et permet de se rediriger vers l'accueil ou le panier
     Elle est exécutée au clic du bouton "Ajouter au panier" sur la page produit.html */
 
-    showConfirmModal() {
+    showAddConfirmModal() {
         modal.style.display = "block";
         document.getElementById("modal").innerHTML =
             `<div class="modal_content">

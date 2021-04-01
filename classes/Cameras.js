@@ -48,7 +48,7 @@ class Cameras {
                 cart.cartNumber();
                 cart.cartItem(camera);
                 const modal = new Modal;
-                modal.showConfirmModal();
+                modal.showAddConfirmModal();
             })
         }   
     }
